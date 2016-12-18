@@ -1,9 +1,5 @@
 import discord
 import asyncio
-import importlib
-import json
-import sys
-import on_msg
 
 # Load bot info
 bot_info = none
