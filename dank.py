@@ -3,6 +3,7 @@ import asyncio
 
 client = discord.Client()
 
+#Getting set up
 @client.async_event
 def on_ready():
     print('Logged in as')
@@ -10,6 +11,19 @@ def on_ready():
     print(client.user.id)
     print('------')
     yield from client.change_presence(game=discord.Game(name='boi'))
+
+#Process commands
+@client.event
+async def on_message(message):
+    await client.process_commands(message)
+    
+#Error messages
+@client.event
+async def on_command_error(error, context):
+    await client.send_message(context.message.channel, 'you fucking idiot messed up on ' + repr(error))
+
+#Reloading shit
+@client.command(description='Reloads extensions. Usage: /reload [extension_list]')
 
 @client.event
 async def on_message(message):
