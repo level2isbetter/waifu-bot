@@ -14,12 +14,12 @@ def on_ready():
 @client.event
 async def on_message(message):
     if message.content.startswith('/hi'):
-        await client.send_message(message.channel, 'hi!!!! xD')
+        tmp = await client.send_message(message.channel, 'hi!!!! xD')
 
 @client.event
 async def on_message(message):
     if message.content.startswith('boi'):
-        await client.send_message(message.channel, 'ayyy boi what skin you want boi?')
+        tmp = await client.send_message(message.channel, 'ayyy boi what skin you want boi?')
 
 @client.event
 async def on_reaction_add(reaction, user):
