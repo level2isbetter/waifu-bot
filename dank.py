@@ -17,6 +17,10 @@ async def on_message(message):
         await client.send_message(message.channel, 'hi!!!! xD')
 
 @client.event
+async def on_message(message):
+    if message.content.startswith('boi'):
+        await client.send_message(message.channel, 'ayyy boi what skin you want boi?")
+@client.event
 async def on_reaction_add(reaction, user):
     await client.send_message(reaction.message.channel, "The reaction added was: " + str(reaction.emoji))
     await client.delete_message(reaction.message)
