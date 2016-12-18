@@ -1,11 +1,6 @@
 import discord
 import asyncio
 
-# Load bot info
-bot_info = none
-with open('bot_info.json') as f:
-    bot_info = json.load(f)
-
 client = discord.Client()
 
 @client.async_event
