@@ -15,7 +15,7 @@ def on_ready():
 #Process commands
 @client.event
 async def on_message(message):
-    await client.process_commands(message)
+    await client.delete_message(message)
     
 @client.event
 async def on_message(message):
