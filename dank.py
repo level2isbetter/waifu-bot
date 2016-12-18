@@ -17,23 +17,10 @@ def on_ready():
 async def on_message(message):
     await client.process_commands(message)
     
-#Error messages
-@client.event
-async def on_command_error(error, context):
-    await client.send_message(context.message.channel, 'you fucking idiot messed up on ' + repr(error))
-
-#Reloading shit
-@client.command(description='Reloads extensions. Usage: /reload [extension_list]')
-
 @client.event
 async def on_message(message):
-    if message.content.startswith('/hi'):
-        tmp = await client.send_message(message.channel, 'hi!!!! xD')
-
-@client.event
-async def on_message(message):
-    if message.content.startswith('boi'):
-        tmp = await client.send_message(message.channel, 'ayyy boi what skin you want boi?')
+    if message.content.startswith('\hi'):
+        await client.send_message(message.channel, 'hi!!!! xD')
 
 @client.event
 async def on_reaction_add(reaction, user):
