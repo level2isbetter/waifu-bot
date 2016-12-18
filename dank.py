@@ -11,16 +11,12 @@ def on_ready():
     print(client.user.id)
     print('------')
     yield from client.change_presence(game=discord.Game(name='boi'))
-
-#Process commands
-@client.event
-async def on_message(message):
-    await client.delete_message(message)
     
 @client.event
 async def on_message(message):
     if message.content.startswith('\hi'):
         await client.send_message(message.channel, 'hi!!!! xD')
+        await client.delete_message(message)
 
 @client.event
 async def on_reaction_add(reaction, user):
